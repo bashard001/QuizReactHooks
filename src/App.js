@@ -55,7 +55,7 @@ const [state, dispatch ] = useCombinedReducers({
 const {start , progress, questions} = state
   return (
    <DispatchContext.Provider value={{dispatch,start, progress, questions}}>
-      <Header/>
+     {!start ? null :  <Header />}
       <ListQuestions/>
      </DispatchContext.Provider>
    
