@@ -1,16 +1,22 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect,useContext } from 'react'
 import "./header.styles.scss"
+import DispatchContext from '../context/DispatchContext'
 
 export default function Header() {
 
-    let [timer, setTimer] = useState(10)
+    const { start, dispatch } = useContext(DispatchContext)
+
+    let [timer, setTimer] = useState(5)
 
     let interval 
 
 
 function timerFun() {
         if (timer === 0) {
+            console.log(" is end")
+            dispatch({type: "END_QUIZ"})
             clearInterval(interval)
+            
         } else {
            timer--
             setTimer(prevTimer => prevTimer - 1)
@@ -18,7 +24,6 @@ function timerFun() {
 
     }
     
-
     useEffect(() => {
         
         interval = setInterval(timerFun, 1000)
@@ -27,13 +32,16 @@ function timerFun() {
         }
     }, [])
 
-
+if(start.end){
+    return null
+}
     return (
         <div className="header">
+            <div >The Quiz has Started</div>
             <div id="timer">
-                {timer}
+               you have {timer} seconds remaining
             </div>
-            <div id="timeleft"></div>
+            
         </div>
     )
 }

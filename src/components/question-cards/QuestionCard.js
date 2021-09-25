@@ -17,7 +17,7 @@ const handleClick = (e)=>{
  
 }
 
-    if (!start) {
+    if (!start.start) {
         return null
     }
 

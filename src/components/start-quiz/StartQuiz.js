@@ -10,7 +10,7 @@ export default function StartQuiz() {
     }
 
 
-    if(start){
+    if(start.start){
         return null
     }
 
