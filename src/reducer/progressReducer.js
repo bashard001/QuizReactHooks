@@ -8,7 +8,7 @@ const ProgressReducer = (state, action) => {
         }
         case "SCORE": return{
             ...state,
-            score: action.payload
+            score: state.score+1
         }
             
            case "TIME_LEFT": return {
