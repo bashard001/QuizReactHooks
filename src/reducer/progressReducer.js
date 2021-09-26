@@ -1,5 +1,3 @@
-
-
 const ProgressReducer = (state, action) => {
     switch (action.type) {
         case "NEXT_Q": return {

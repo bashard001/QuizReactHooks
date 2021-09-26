@@ -8,16 +8,16 @@ export default function QuestionCard() {
     var i = progress.i
     console.log(questions)
 
-const handleClick = (e)=>{
+    const handleClick = (e) => {
 
-   dispatch({type: "NEXT_Q"})
-  if( e.target.getAttribute("answer")=== "right"){
-    dispatch({type: "SCORE"})  
-  }
- 
-}
+        dispatch({ type: "NEXT_Q" })
+        if (e.target.getAttribute("answer") === "right") {
+            dispatch({ type: "SCORE" })
+        }
 
-    if (!start.start) {
+    }
+
+    if (!start.start || start.end) {
         return null
     }
 
@@ -25,9 +25,9 @@ const handleClick = (e)=>{
         <div>
             <h1>{questions[i].title}</h1>
             {questions[i].choices.map((choice, index) =>
-                 <h3 key={index} onClick={handleClick} answer={questions[i].answer === choice ? "right" : "wrong"}
-                  className="choice-btn">{choice}</h3>
-                 )}
+                <h3 key={index} onClick={handleClick} answer={questions[i].answer === choice ? "right" : "wrong"}
+                    className="choice-btn">{choice}</h3>
+            )}
         </div>
     )
 }
