@@ -9,7 +9,7 @@ export default function Header() {
 
     const { start, dispatch } = useContext(DispatchContext)
 
-    let [timer, setTimer] = useState(80)
+    let [timer, setTimer] = useState(10)
 
     let interval = useRef()
 

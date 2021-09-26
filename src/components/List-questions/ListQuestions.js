@@ -3,6 +3,7 @@ import "./list.styles.scss"
 import StartQuiz from '../start-quiz/StartQuiz'
 import QuestionCard from '../question-cards/QuestionCard';
 import DispatchContext from '../context/DispatchContext';
+import EndPage from '../end-page/EndPage';
 
 
 
@@ -15,6 +16,7 @@ export default function ListQuestions() {
         <div className="main-content">
             <StartQuiz />
             <QuestionCard />
+            <EndPage />
         </div>
     )
 }

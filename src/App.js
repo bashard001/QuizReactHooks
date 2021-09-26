@@ -9,7 +9,7 @@ import ListQuestions from './components/List-questions/ListQuestions';
 import { QuizReducer } from './reducer/quizReducer';
 import ProgressReducer from './reducer/progressReducer';
 import QuestionsReducer from './reducer/questionsReducer';
-import Questions from './components/assets/questions';
+import Questions from './assets/questions';
 
 const INITIAL_STATE = {
   i: 0,
