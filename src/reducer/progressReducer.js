@@ -4,7 +4,7 @@ const ProgressReducer = (state, action) => {
     switch (action.type) {
         case "NEXT_Q": return {
             ...state, 
-            i: state.i++
+            i: state.i + 1
         }
         case "SCORE": return{
             ...state,
