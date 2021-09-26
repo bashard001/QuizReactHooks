@@ -6,7 +6,7 @@ export default function Header() {
 
     const { start, dispatch } = useContext(DispatchContext)
 
-    let [timer, setTimer] = useState(5)
+    let [timer, setTimer] = useState(80)
 
     let interval = useRef()
 
@@ -20,7 +20,6 @@ export default function Header() {
             timer--
             setTimer(prevTimer => prevTimer - 1)
         }
-
     }
 
     useEffect(() => {
