@@ -2,11 +2,14 @@ import React, { useState, useEffect, useContext, useRef } from 'react'
 import "./header.styles.scss"
 import DispatchContext from '../context/DispatchContext'
 
+
+
+
 export default function Header() {
 
     const { start, dispatch } = useContext(DispatchContext)
 
-    let [timer, setTimer] = useState(5)
+    let [timer, setTimer] = useState(80)
 
     let interval = useRef()
 
@@ -24,13 +27,12 @@ export default function Header() {
     }
 
     useEffect(() => {
-
-
         interval.current = setInterval(timerFun, 1000)
         return () => clearInterval(interval.current)
 
     }, [])
 
+    
     if (start.end) {
         return null
     }
