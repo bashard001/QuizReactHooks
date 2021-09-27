@@ -9,19 +9,27 @@ export default function QuestionCard() {
     console.log(questions)
 
     const handleClick = (e) => {
+
         if (i < questions.length - 1) {
-            console.log(i + " " + questions.length)
             dispatch({ type: "NEXT_Q" })
+
             if (e.target.getAttribute("answer") === "right") {
-                dispatch({ type: "ANSWER", answer: "Right"})
+                dispatch({ type: "ANSWER", answer: "Right" })
                 dispatch({ type: "SCORE" })
             } else {
-                dispatch({ type: "ANSWER", answer: "Wrong"})
+                dispatch({ type: "ANSWER", answer: "Wrong" })
             }
         } else {
-            
+            if (e.target.getAttribute("answer") === "right") {
+                dispatch({ type: "ANSWER", answer: "Right" })
+                dispatch({ type: "SCORE" })
+            } else {
+                dispatch({ type: "ANSWER", answer: "Wrong" })
+            }
+
             dispatch({ type: "END_QUIZ" })
         }
+
     }
 
     if (!start.start || start.end) {

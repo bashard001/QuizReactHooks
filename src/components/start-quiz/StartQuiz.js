@@ -9,7 +9,6 @@ export default function StartQuiz() {
         dispatch({ type: "START_QUIZ" })
     }
 
-
     if (start.start) {
         return null
     }

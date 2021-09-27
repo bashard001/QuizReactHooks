@@ -17,7 +17,6 @@ const INITIAL_STATE = {
   answers: []
 }
 
-
 function App() {
   const [state, dispatch] = useCombinedReducers({
     start: useReducer(QuizReducer, {

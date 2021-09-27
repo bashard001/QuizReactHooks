@@ -3,13 +3,11 @@ import "./header.styles.scss"
 import DispatchContext from '../context/DispatchContext'
 
 
-
-
 export default function Header() {
 
     const { start, dispatch } = useContext(DispatchContext)
 
-    let [timer, setTimer] = useState(10)
+    let [timer, setTimer] = useState(80)
 
     let interval = useRef()
 
@@ -31,11 +29,10 @@ export default function Header() {
 
     }, [])
 
-    
+
     if (start.end) {
         return null
     }
-
 
     return (
         <div className="header">
