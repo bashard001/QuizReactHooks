@@ -4,8 +4,13 @@ function addA(answer){
     }
 }
 
-
-
+function init(){
+    return{
+        i: 0,
+        score: 0,
+        answers: []
+      }
+}
 
 const ProgressReducer = (state, action) => {
     switch (action.type) {
@@ -26,6 +31,7 @@ const ProgressReducer = (state, action) => {
                ...state,
                answers: [...state.answers, addA(action.answer)]
            }
+           case "RESET": return init()
     
         default:
             return state

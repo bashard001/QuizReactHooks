@@ -6,7 +6,7 @@ import "./end.styles.scss"
 export default function EndPage() {
     const [initial, setInitial] = useState("")
     const [showRes, setShowRes] = useState(false)
-    const { start, progress } = useContext(DispatchContext)
+    const { start, progress, dispatch } = useContext(DispatchContext)
     const highestScore = localStorage.getItem("initials")
     const pastScore = localStorage.getItem("score")
 
@@ -20,8 +20,12 @@ export default function EndPage() {
             localStorage.setItem("initials", `${initial.toUpperCase()} : ${progress.score}`)
             localStorage.setItem("score", progress.score)
         }
-
         setShowRes(true)
+    }
+
+    function restart(){
+        setShowRes(false)
+        dispatch({type: "RESET"})
     }
 
     if (!start.end) {
@@ -40,6 +44,9 @@ export default function EndPage() {
                     <h3>Your Score : {progress.score} out of 5</h3>
                     <hr />
                     {progress.answers.map((answer, index) => <div key={index}>Q {index + 1} : {answer.answer} Answer</div>)}
+                    <div>
+                        <button onClick={restart}>Try Again</button>
+                    </div>
                 </fieldset>
                 :
                 <form onSubmit={handleSubmit}>
