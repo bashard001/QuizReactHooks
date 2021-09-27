@@ -14,7 +14,7 @@ import Questions from './assets/questions';
 const INITIAL_STATE = {
   i: 0,
   score: 0,
-  timeLeft: 80
+  answers: []
 }
 
 

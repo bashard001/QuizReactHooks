@@ -13,9 +13,13 @@ export default function QuestionCard() {
             console.log(i + " " + questions.length)
             dispatch({ type: "NEXT_Q" })
             if (e.target.getAttribute("answer") === "right") {
+                dispatch({ type: "ANSWER", answer: "Right"})
                 dispatch({ type: "SCORE" })
+            } else {
+                dispatch({ type: "ANSWER", answer: "Wrong"})
             }
         } else {
+            
             dispatch({ type: "END_QUIZ" })
         }
     }
