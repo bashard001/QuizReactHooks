@@ -43,8 +43,9 @@ export default function EndPage() {
 
                     <h3>Your Score : {progress.score} out of 5</h3>
                     <hr />
+                    <div className="results">
                     {progress.answers.map((answer, index) => <div key={index}>Q {index + 1} : {answer.answer} Answer</div>)}
-                    <div>
+                    
                         <button onClick={restart}>Try Again</button>
                     </div>
                 </fieldset>

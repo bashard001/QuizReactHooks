@@ -19,3 +19,16 @@ form{
         border: none;
     }
 }
+.results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button{
+        margin: 8px 5px;
+    }
+    div{
+        margin: 7px 5px;
+    }
+}
