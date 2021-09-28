@@ -17,7 +17,7 @@ export default function StartQuiz() {
         <div className="start-quiz">
             <h1>Astronomy Quiz</h1>
             <h2>This is the Astronomy Quiz you been waiting to take all your life!! are you prepared Click the button to get started!!!</h2>
-            <button className='buttons' onClick={handleClick}>Take the quiz</button>
+            <button className='buttons' onClick={handleClick}>Start Quiz</button>
 
         </div>
     )

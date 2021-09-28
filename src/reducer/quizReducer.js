@@ -4,6 +4,10 @@ export const QuizReducer =(state, action) =>{
             ...state,
             start: true
         }
+        case "RESET": return{
+            start: false,
+            end:false
+        }
             
       case "END_QUIZ": return {
         ...state,

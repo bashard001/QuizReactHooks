@@ -34,7 +34,7 @@ const ProgressReducer = (state, action) => {
            case "RESET": return init()
     
         default:
-            return state
+            return state 
     }
 }
 

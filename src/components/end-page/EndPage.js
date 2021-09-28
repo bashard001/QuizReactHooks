@@ -34,7 +34,7 @@ export default function EndPage() {
 
     return (
         <div>
-            <div>You have successfully finished the Quiz</div>
+            <div className="end-title">You have successfully finished the Quiz</div>
 
             {showRes ?
                 <fieldset>
