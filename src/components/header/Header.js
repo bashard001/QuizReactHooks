@@ -10,21 +10,24 @@ export default function Header() {
     let [timer, setTimer] = useState(80)
 
     let interval = useRef()
-
-    const timerFun = () => {
-        if (timer === 0) {
-            console.log(" is end")
-            dispatch({ type: "END_QUIZ" })
-            clearInterval(interval.current)
-
-        } else {
-            timer--
-            setTimer(prevTimer => prevTimer - 1)
-        }
-    }
+    let timerRef = useRef(80)
+    let dispatchRef = useRef(dispatch)
+   
 
     useEffect(() => {
-        interval.current = setInterval(timerFun, 1000)
+        console.log(dispatchRef.current)
+        console.log("effect")
+        interval.current = setInterval(() => {
+            if (timerRef.current === 0) {
+                console.log(" is end")
+                dispatchRef.current({ type: "END_QUIZ" })
+                clearInterval(interval.current)
+    
+            } else {
+                timerRef.current = timerRef.current -1
+                setTimer(prevTimer => prevTimer - 1)
+            }
+        }, 1000)
         return () => clearInterval(interval.current)
 
     }, [])
